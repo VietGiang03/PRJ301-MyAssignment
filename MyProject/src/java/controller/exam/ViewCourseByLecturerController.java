@@ -78,3 +78,4 @@ public class ViewCourseByLecturerController extends BaseRequiredLecturerAuthenti
     }// </editor-fold>
 
 }
+

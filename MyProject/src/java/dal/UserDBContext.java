@@ -57,6 +57,24 @@ public class UserDBContext extends DBContext<User> {
         }
         return user;
     }
+    public User getUserById(int userId) {
+        try {
+            String sql = "SELECT * FROM [User] WHERE id = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, userId);
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt("id"));
+                user.setUsername(rs.getString("username"));
+                user.setFullname(rs.getString("fullname"));
+                return user;
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
 
     @Override
     public void insert(User model) {
