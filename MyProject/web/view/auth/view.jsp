@@ -86,8 +86,8 @@
   <div class="header">
         <h1>Welcome to FPT</h1>
         <input type="text" class="search-box" placeholder="Search...">
-        <a href="exam.jsp" class="link-button">Exam</a>
-        <a href="grade.jsp" class="link-button">Grade</a>
+        <a href="/MyProject/exam/take" class="link-button">Exam</a>
+        <a href="/MyProject/exam/lecturer" class="link-button">Grade</a>
         <a href="student_list.jsp" class="link-button">Student List</a>
         <a href="logout.jsp" class="logout-button">Logout</a>
     </div>

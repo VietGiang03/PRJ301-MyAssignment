@@ -12,37 +12,28 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Student;
+import model.User;
 
 /**
  *
- * @author Giang123
+ * @author sonnt-local
  */
-@WebServlet(name="BaseRequiredStudentAuthenticationController", urlPatterns={"/BaseRequiredStudentAuthenticationController"})
-public class BaseRequiredStudentAuthenticationController extends HttpServlet {
+public abstract class BaseRequiredStudentAuthenticationController extends HttpServlet {
    
-    /** 
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet BaseRequiredStudentAuthenticationController</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet BaseRequiredStudentAuthenticationController at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+    private boolean isAuthenticated(HttpServletRequest request)
+    {
+        User user = (User)request.getSession().getAttribute("user");
+        if(user ==null)
+            return false;
+        else
+        {
+            Student student = user.getStudent();
+            return student != null;
         }
-    } 
+    }
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
@@ -55,8 +46,22 @@ public class BaseRequiredStudentAuthenticationController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        User user = (User)request.getSession().getAttribute("user");
+        if(isAuthenticated(request))
+        {
+            doGet(request, response, user, user.getStudent());
+        }
+        else
+        {
+            response.getWriter().println("access denied!");
+        }
     } 
+    
+    protected abstract void doGet(HttpServletRequest request, HttpServletResponse response,User user, Student student)
+    throws ServletException, IOException;
+    
+    protected abstract void doPost(HttpServletRequest request, HttpServletResponse response,User user, Student student)
+    throws ServletException, IOException;
 
     /** 
      * Handles the HTTP <code>POST</code> method.
@@ -68,7 +73,15 @@ public class BaseRequiredStudentAuthenticationController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        User user = (User)request.getSession().getAttribute("user");
+        if(isAuthenticated(request))
+        {
+            doPost(request, response, user, user.getStudent());
+        }
+        else
+        {
+            response.getWriter().println("access denied!");
+        }
     }
 
     /** 

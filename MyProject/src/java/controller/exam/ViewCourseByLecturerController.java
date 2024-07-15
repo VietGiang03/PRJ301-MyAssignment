@@ -5,7 +5,7 @@
 
 package controller.exam;
 
-import controller.auth.BaseRequiredLecturerAuthenticationController;
+import controller.auth.BaseRequiredAuthenticationController;
 import dal.CourseDBContext;
 import dal.ExamDBContext;
 import java.io.IOException;
@@ -18,13 +18,14 @@ import java.util.ArrayList;
 import model.Course;
 import model.Exam;
 import model.Lecturer;
+import model.Student;
 import model.User;
 
 /**
  *
  * @author X1 Nano
  */
-public class ViewCourseByLecturerController extends BaseRequiredLecturerAuthenticationController {
+public class ViewCourseByLecturerController extends BaseRequiredAuthenticationController {
    
     
 
@@ -76,6 +77,16 @@ public class ViewCourseByLecturerController extends BaseRequiredLecturerAuthenti
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response, User user, Student student) throws ServletException, IOException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response, User user, Student student) throws ServletException, IOException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }
 

@@ -5,7 +5,7 @@
 
 package controller.exam;
 
-import controller.auth.BaseRequiredLecturerAuthenticationController;
+import controller.auth.BaseRequiredAuthenticationController;
 import dal.ExamDBContext;
 import dal.GradeDBContext;
 import dal.StudentDBContext;
@@ -27,7 +27,7 @@ import model.User;
  *
  * @author sonnt-local
  */
-public class TakeExamController extends BaseRequiredLecturerAuthenticationController {
+public class TakeExamController extends BaseRequiredAuthenticationController {
    
    
 
@@ -125,5 +125,15 @@ public class TakeExamController extends BaseRequiredLecturerAuthenticationContro
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response, User user, Student student) throws ServletException, IOException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response, User user, Student student) throws ServletException, IOException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }

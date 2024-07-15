@@ -48,6 +48,10 @@
         <servlet-name>java</servlet-name>
         <servlet-class>AccountServlet.java</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewGradesController</servlet-name>
+        <servlet-class>controller.exam.ViewGradesController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
@@ -89,11 +93,11 @@
         <url-pattern>/depts/list</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ViewCourseByStudentController</servlet-name>
-        <url-pattern>/exam/student</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>java</servlet-name>
         <url-pattern>/java</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewGradesController</servlet-name>
+        <url-pattern>/exam/student</url-pattern>
     </servlet-mapping>
 </web-app>
