@@ -84,10 +84,7 @@
 </head>
 <body>
   <div class="header">
-        <h1>Welcome to ${user.displayname}</h1>
-        <div class="account-info">
-            Logged in as: ${user.displayname}
-        </div>
+        <h1>Welcome to FPT</h1>
         <input type="text" class="search-box" placeholder="Search...">
         <a href="exam.jsp" class="link-button">Exam</a>
         <a href="grade.jsp" class="link-button">Grade</a>
