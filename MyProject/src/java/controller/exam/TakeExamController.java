@@ -5,7 +5,7 @@
 
 package controller.exam;
 
-import controller.auth.BaseRequiredAuthenticationController;
+import controller.auth.BaseRequiredLecturerAuthenticationController;
 import dal.ExamDBContext;
 import dal.GradeDBContext;
 import dal.StudentDBContext;
@@ -27,7 +27,7 @@ import model.User;
  *
  * @author sonnt-local
  */
-public class TakeExamController extends BaseRequiredAuthenticationController {
+public class TakeExamController extends BaseRequiredLecturerAuthenticationController {
    
    
 
@@ -71,7 +71,9 @@ public class TakeExamController extends BaseRequiredAuthenticationController {
      * Handles the HTTP <code>POST</code> method.
      * @param request servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
+     *
+     * @param user
+     * @param lecturer @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
     @Override
@@ -125,15 +127,5 @@ public class TakeExamController extends BaseRequiredAuthenticationController {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response, User user, Student student) throws ServletException, IOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response, User user, Student student) throws ServletException, IOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
 }

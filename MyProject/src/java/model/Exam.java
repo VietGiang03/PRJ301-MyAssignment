@@ -16,15 +16,18 @@ public class Exam {
     private Date from;
     private int duration;
     private Assessment assessment;
-    private ArrayList<Grade> grades = new ArrayList<>();
+    private Grade grade;
 
-    public ArrayList<Grade> getGrades() {
-        return grades;
+    public Grade getGrade() {
+        return grade;
     }
 
-    public void setGrades(ArrayList<Grade> grades) {
-        this.grades = grades;
+    public void setGrade(Grade grade) {
+        this.grade = grade;
     }
+   
+
+   
     
 
     public int getId() {

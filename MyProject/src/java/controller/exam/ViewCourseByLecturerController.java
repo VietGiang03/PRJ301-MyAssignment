@@ -5,7 +5,7 @@
 
 package controller.exam;
 
-import controller.auth.BaseRequiredAuthenticationController;
+import controller.auth.BaseRequiredLecturerAuthenticationController;
 import dal.CourseDBContext;
 import dal.ExamDBContext;
 import java.io.IOException;
@@ -25,7 +25,7 @@ import model.User;
  *
  * @author X1 Nano
  */
-public class ViewCourseByLecturerController extends BaseRequiredAuthenticationController {
+public class ViewCourseByLecturerController extends BaseRequiredLecturerAuthenticationController{
    
     
 
@@ -37,7 +37,7 @@ public class ViewCourseByLecturerController extends BaseRequiredAuthenticationCo
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
+   
     protected void doGet(HttpServletRequest request, HttpServletResponse response,User user, Lecturer lecturer)
     throws ServletException, IOException {
         CourseDBContext db = new CourseDBContext();
@@ -54,7 +54,7 @@ public class ViewCourseByLecturerController extends BaseRequiredAuthenticationCo
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
+   
     protected void doPost(HttpServletRequest request, HttpServletResponse response,User user, Lecturer lecturer)
     throws ServletException, IOException {
         int cid = Integer.parseInt(request.getParameter("cid"));
@@ -78,15 +78,8 @@ public class ViewCourseByLecturerController extends BaseRequiredAuthenticationCo
         return "Short description";
     }// </editor-fold>
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response, User user, Student student) throws ServletException, IOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response, User user, Student student) throws ServletException, IOException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 
 }
 

@@ -4,41 +4,27 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
- * @author Giang123
+ * @author sonnt-local
  */
 public class User {
-
     private String username;
     private String password;
     private String displayname;
-    private Role role;
     private Lecturer lecturer;
     private Student student;
+    private int roleId;
+     private ArrayList<Role> roles = new ArrayList<>();
 
-    public Lecturer getLecturer() {
-        return lecturer;
+    public ArrayList<Role> getRoles() {
+        return roles;
     }
 
-    public void setLecturer(Lecturer lecturer) {
-        this.lecturer = lecturer;
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoles(ArrayList<Role> roles) {
+        this.roles = roles;
     }
 
     public String getUsername() {
@@ -65,16 +51,29 @@ public class User {
         this.displayname = displayname;
     }
 
-    public void setFullname(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Lecturer getLecturer() {
+        return lecturer;
     }
 
-    public void setId(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setLecturer(Lecturer lecturer) {
+        this.lecturer = lecturer;
     }
 
-    public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Student getStudent() {
+        return student;
     }
 
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
+
+    
 }

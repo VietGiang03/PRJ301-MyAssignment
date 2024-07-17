@@ -15,6 +15,7 @@ public class Role {
     private String name;
     private ArrayList<User> users = new ArrayList<>();
     private ArrayList<Feature> features = new ArrayList<>();
+    
 
     public int getId() {
         return id;
@@ -46,6 +47,10 @@ public class Role {
 
     public void setFeatures(ArrayList<Feature> features) {
         this.features = features;
+    }
+
+    public int getRoleId() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
             

@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author Giang123
+ * @param <T>
  * @param <<error>>
  */
 public abstract class DBContext<T> {

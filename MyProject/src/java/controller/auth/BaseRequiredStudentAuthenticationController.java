@@ -15,10 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import model.Student;
 import model.User;
 
-/**
- *
- * @author sonnt-local
- */
+
 public abstract class BaseRequiredStudentAuthenticationController extends HttpServlet {
    
     private boolean isAuthenticated(HttpServletRequest request)

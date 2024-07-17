@@ -5,26 +5,6 @@
         <servlet-class>myseverlet.NewServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CreateEmployee</servlet-name>
-        <servlet-class>controller.employee.CreateEmployee</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DetailEmployee</servlet-name>
-        <servlet-class>controller.employee.DetailEmployee</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ListEmployee</servlet-name>
-        <servlet-class>controller.employee.ListEmployee</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RemoveEmployee</servlet-name>
-        <servlet-class>controller.employee.RemoveEmployee</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UpdateEmployee</servlet-name>
-        <servlet-class>controller.employee.UpdateEmployee</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>LoginController</servlet-name>
         <servlet-class>controller.auth.LoginController</servlet-class>
     </servlet>
@@ -41,40 +21,36 @@
         <servlet-class>controller.depts.ListController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ViewCourseByStudentController</servlet-name>
-        <servlet-class>controller.exam.ViewCourseByStudentController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>java</servlet-name>
         <servlet-class>AccountServlet.java</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ViewGradesController</servlet-name>
-        <servlet-class>controller.exam.ViewGradesController</servlet-class>
+        <servlet-name>CreateEmployeeController</servlet-name>
+        <servlet-class>controller.employee.CreateEmployeeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DetailEmployeeController</servlet-name>
+        <servlet-class>controller.employee.DetailEmployeeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListEmployeeController</servlet-name>
+        <servlet-class>controller.employee.ListEmployeeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveEmployeeController</servlet-name>
+        <servlet-class>controller.employee.RemoveEmployeeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateEmployeeController</servlet-name>
+        <servlet-class>controller.employee.UpdateEmployeeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewCourseByStudentController</servlet-name>
+        <servlet-class>controller.exam.ViewCourseByStudentController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CreateEmployee</servlet-name>
-        <url-pattern>/emp/create</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DetailEmployee</servlet-name>
-        <url-pattern>/emp/detail</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ListEmployee</servlet-name>
-        <url-pattern>/emp/list</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RemoveEmployee</servlet-name>
-        <url-pattern>/emp/remove</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UpdateEmployee</servlet-name>
-        <url-pattern>/emp/update</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
@@ -97,7 +73,29 @@
         <url-pattern>/java</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ViewGradesController</servlet-name>
+        <servlet-name>CreateEmployeeController</servlet-name>
+        <url-pattern>/emp/create</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailEmployeeController</servlet-name>
+        <url-pattern>/emp/detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListEmployeeController</servlet-name>
+        <url-pattern>/emp/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveEmployeeController</servlet-name>
+        <url-pattern>/emp/remove</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateEmployeeController</servlet-name>
+        <url-pattern>/emp/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewCourseByStudentController</servlet-name>
         <url-pattern>/exam/student</url-pattern>
     </servlet-mapping>
+    
+
 </web-app>
